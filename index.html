@@ -1,0 +1,3111 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untuk Kamu, Sayang ❤️</title>
+
+<style>
+
+/* =====================================================
+   FONT
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 105, 180, .15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 0, 100, .12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #13000c,
+            #260013,
+            #10000b
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.background::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    background: rgba(255, 20, 100, .12);
+
+    filter: blur(120px);
+
+    border-radius: 50%;
+
+    top: -200px;
+    left: -200px;
+
+    animation:
+        glow 8s ease-in-out infinite alternate;
+}
+
+.background::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: rgba(255, 100, 180, .1);
+
+    filter: blur(100px);
+
+    border-radius: 50%;
+
+    bottom: -200px;
+    right: -150px;
+
+    animation:
+        glow 10s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes glow {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.4);
+    }
+
+}
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+.particle {
+    position: fixed;
+
+    width: 3px;
+    height: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    opacity: .6;
+
+    animation:
+        twinkle 3s infinite ease-in-out;
+
+    z-index: -1;
+}
+
+@keyframes twinkle {
+
+    0%,100% {
+        opacity: .15;
+        transform: scale(.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+}
+
+
+/* =====================================================
+   FLOATING HEART
+===================================================== */
+
+.heart {
+    position: fixed;
+
+    bottom: -50px;
+
+    font-size: 20px;
+
+    pointer-events: none;
+
+    animation:
+        floatHeart linear forwards;
+
+    z-index: 10;
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(255, 70, 150, .8)
+        );
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            scale(.6)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            translateX(var(--move))
+            scale(1.5)
+            rotate(30deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+nav {
+
+    position: fixed;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(94%, 950px);
+
+    padding: 13px 20px;
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    background:
+        rgba(255,255,255,.06);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-radius: 50px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    z-index: 100;
+}
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    opacity: .75;
+
+    transition: .3s;
+}
+
+nav a:hover {
+
+    opacity: 1;
+
+    color: #ff75ad;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        100px 20px 60px;
+
+    position: relative;
+}
+
+.hero-content {
+
+    max-width: 850px;
+}
+
+.small-title {
+
+    color: #ff85b7;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+
+    font-family: 'Caveat', cursive;
+
+    font-size:
+        clamp(70px, 12vw, 150px);
+
+    line-height: .8;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ff9fc5,
+            #fff
+        );
+
+    background-size: 200%;
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+    animation:
+        shine 5s linear infinite;
+}
+
+@keyframes shine {
+
+    to {
+        background-position: 200%;
+    }
+
+}
+
+.hero p {
+
+    margin-top: 30px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color:
+        rgba(255,255,255,.7);
+}
+
+.names {
+
+    margin-top: 30px;
+
+    font-family: 'Caveat', cursive;
+
+    font-size: 34px;
+
+    color: #ff9dc4;
+}
+
+.scroll {
+
+    position: absolute;
+
+    bottom: 30px;
+
+    font-size: 12px;
+
+    opacity: .5;
+
+    animation:
+        bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    50% {
+        transform: translateY(10px);
+    }
+
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+section {
+
+    padding: 110px 20px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+.section-title span {
+
+    color: #ff78ae;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+}
+
+.section-title h2 {
+
+    font-family: 'Caveat', cursive;
+
+    font-size: 58px;
+
+    margin-top: 5px;
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+.timer-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 15px;
+}
+
+.time-box {
+
+    padding: 30px 15px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:
+        blur(15px);
+
+    transition: .4s;
+}
+
+.time-box:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(255,100,160,.4);
+
+    box-shadow:
+        0 20px 50px
+        rgba(255,0,100,.1);
+}
+
+.time-box strong {
+
+    display: block;
+
+    font-size: 42px;
+
+    color: #ff9fc5;
+}
+
+.time-box span {
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    opacity: .5;
+}
+
+
+/* =====================================================
+   LOVE CARD
+===================================================== */
+
+.love-card {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    padding: 60px 45px;
+
+    text-align: center;
+
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.1),
+            rgba(255,255,255,.03)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.3);
+}
+
+.big-heart {
+
+    font-size: 60px;
+
+    animation:
+        heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.2);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.15);
+    }
+
+}
+
+.love-card p {
+
+    margin-top: 25px;
+
+    font-family:
+        'Caveat', cursive;
+
+    font-size: 30px;
+
+    line-height: 1.5;
+
+    color: #ffd7e5;
+}
+
+
+/* =====================================================
+   DISTANCE
+===================================================== */
+
+.distance {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 40px;
+}
+
+.person {
+
+    text-align: center;
+}
+
+.avatar {
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 42px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 0 40px
+        rgba(255,50,120,.1);
+}
+
+.person p {
+
+    margin-top: 15px;
+
+    color: #ffb3cf;
+}
+
+.line {
+
+    width: 180px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ff6eaa,
+            transparent
+        );
+
+    position: relative;
+}
+
+.line::after {
+
+    content: "♥";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    background: #18000d;
+
+    padding: 10px;
+
+    color: #ff76aa;
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.letter-box {
+
+    text-align: center;
+}
+
+.open-letter {
+
+    border: none;
+
+    padding:
+        16px 32px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff477e,
+            #ff7aaa
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 35px
+        rgba(255,50,120,.25);
+
+    transition: .3s;
+}
+
+.open-letter:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+}
+
+.letter {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        1s ease;
+
+    max-width: 700px;
+
+    margin: auto;
+}
+
+.letter.show {
+
+    max-height: 900px;
+
+    opacity: 1;
+
+    margin-top: 35px;
+}
+
+.letter-inner {
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid rgba(255,255,255,.1);
+}
+
+.letter-inner p {
+
+    font-family:
+        'Caveat', cursive;
+
+    font-size: 25px;
+
+    line-height: 1.7;
+
+    color: #ffdce9;
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 15px;
+}
+
+.photo {
+
+    height: 260px;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,80,140,.2),
+            rgba(255,255,255,.04)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.1);
+}
+
+.photo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .6s;
+}
+
+.photo:hover img {
+
+    transform:
+        scale(1.08);
+}
+
+.photo-placeholder {
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-family:
+        'Caveat', cursive;
+
+    font-size: 25px;
+
+    color:
+        rgba(255,255,255,.5);
+}
+
+
+/* =====================================================
+   MINI GAME
+===================================================== */
+
+.game-card {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 25px;
+
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.03)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.25);
+}
+
+.game-info {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.game-info div {
+
+    padding: 15px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,.05);
+}
+
+.game-info small {
+
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    opacity: .5;
+}
+
+.game-info strong {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #ff9fc5;
+
+    font-size: 28px;
+}
+
+.game-area {
+
+    height: 430px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(255,100,160,.12),
+            transparent 40%
+        ),
+        rgba(0,0,0,.18);
+
+    border:
+        1px solid rgba(255,255,255,.08);
+}
+
+.game-start {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+.game-heart {
+
+    font-size: 65px;
+
+    animation:
+        heartbeat 1.3s infinite;
+}
+
+.game-start h3 {
+
+    margin-top: 10px;
+
+    font-family:
+        'Caveat', cursive;
+
+    font-size: 38px;
+}
+
+.game-start p {
+
+    max-width: 400px;
+
+    color:
+        rgba(255,255,255,.6);
+
+    line-height: 1.7;
+}
+
+.game-start button,
+.game-result button {
+
+    margin-top: 25px;
+
+    border: none;
+
+    padding:
+        14px 28px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff477e,
+            #ff79ad
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px
+        rgba(255,50,120,.25);
+
+    transition: .25s;
+}
+
+.game-start button:hover,
+.game-result button:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.03);
+}
+
+.target-heart {
+
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 38px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    animation:
+        targetAppear .25s ease,
+        targetPulse 1s infinite;
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(255,80,150,.7)
+        );
+}
+
+@keyframes targetAppear {
+
+    from {
+
+        transform: scale(0);
+
+        opacity: 0;
+    }
+
+    to {
+
+        transform: scale(1);
+
+        opacity: 1;
+    }
+
+}
+
+@keyframes targetPulse {
+
+    50% {
+
+        transform:
+            scale(1.12);
+    }
+
+}
+
+.catch-effect {
+
+    position: absolute;
+
+    pointer-events: none;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #ff9fc5;
+
+    animation:
+        scoreFloat .7s ease forwards;
+}
+
+@keyframes scoreFloat {
+
+    from {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+    to {
+
+        opacity: 0;
+
+        transform:
+            translateY(-40px);
+    }
+
+}
+
+.game-result {
+
+    display: none;
+
+    text-align: center;
+
+    padding:
+        35px 20px 10px;
+}
+
+.game-result.show {
+
+    display: block;
+}
+
+.game-result > div:first-child {
+
+    font-size: 65px;
+}
+
+.game-result h3 {
+
+    font-family:
+        'Caveat', cursive;
+
+    font-size: 40px;
+
+    color: #ff9fc5;
+}
+
+.game-result p {
+
+    color:
+        rgba(255,255,255,.7);
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   QUOTE
+===================================================== */
+
+.quote {
+
+    text-align: center;
+
+    padding:
+        100px 20px;
+}
+
+.quote h2 {
+
+    font-family:
+        'Caveat', cursive;
+
+    font-size:
+        clamp(45px,7vw,80px);
+
+    color: #ffb3ce;
+}
+
+.quote p {
+
+    margin-top: 15px;
+
+    opacity: .5;
+}
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+.music {
+
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    background:
+        rgba(255,255,255,.08);
+
+    backdrop-filter:
+        blur(15px);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 100;
+}
+
+.music.playing {
+
+    animation:
+        musicPulse 1s infinite;
+}
+
+@keyframes musicPulse {
+
+    50% {
+
+        box-shadow:
+            0 0 30px
+            rgba(255,80,150,.6);
+    }
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+}
+
+footer p {
+
+    opacity: .5;
+
+    font-size: 12px;
+}
+
+footer strong {
+
+    color: #ff8db9;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px) {
+
+    nav {
+
+        gap: 10px;
+
+        padding:
+            12px 15px;
+    }
+
+    nav a {
+
+        font-size: 9px;
+    }
+
+    .timer-container {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .time-box strong {
+
+        font-size: 32px;
+    }
+
+    .love-card {
+
+        padding:
+            40px 25px;
+    }
+
+    .love-card p {
+
+        font-size: 25px;
+    }
+
+    .distance {
+
+        gap: 15px;
+    }
+
+    .avatar {
+
+        width: 75px;
+        height: 75px;
+
+        font-size: 30px;
+    }
+
+    .line {
+
+        width: 70px;
+    }
+
+    .gallery {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .photo {
+
+        height: 300px;
+    }
+
+    .game-card {
+
+        padding: 15px;
+    }
+
+    .game-area {
+
+        height: 380px;
+    }
+
+    .game-info strong {
+
+        font-size: 22px;
+    }
+
+    .target-heart {
+
+        width: 50px;
+        height: 50px;
+
+        font-size: 34px;
+    }
+
+    section {
+
+        padding:
+            80px 18px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media(prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =================================================
+     BACKGROUND
+================================================= -->
+
+<div class="background"></div>
+
+
+<!-- =================================================
+     NAVIGATION
+================================================= -->
+
+<nav>
+
+    <a href="#home">
+        Home
+    </a>
+
+    <a href="#story">
+        Cerita
+    </a>
+
+    <a href="#letter">
+        Surat
+    </a>
+
+    <a href="#gallery">
+        Kenangan
+    </a>
+
+    <a href="#game">
+        Game ❤️
+    </a>
+
+</nav>
+
+
+<!-- =================================================
+     HERO
+================================================= -->
+
+<div class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+
+            Sebuah halaman kecil
+            untuk seseorang yang besar
+            di hatiku
+
+        </div>
+
+
+        <h1>
+
+            Untuk Kamu ❤️
+
+        </h1>
+
+
+        <p>
+
+            Walaupun kita dipisahkan
+            oleh jarak,
+
+            <br>
+
+            ada satu hal yang tidak pernah
+            bisa dipisahkan:
+
+            <br>
+
+            <b>
+                hati kita.
+            </b>
+
+        </p>
+
+
+        <!-- GANTI NAMA DI SINI -->
+
+        <div class="names">
+
+            Nama Kamu
+            &nbsp; ♥ &nbsp;
+            Nama Pasangan
+
+        </div>
+
+    </div>
+
+
+    <div class="scroll">
+
+        ↓ scroll perlahan ↓
+
+    </div>
+
+</div>
+
+
+
+<!-- =================================================
+     TIMER HUBUNGAN
+================================================= -->
+
+<section id="story">
+
+    <div class="section-title">
+
+        <span>
+            OUR JOURNEY
+        </span>
+
+        <h2>
+            Sudah Selama Ini...
+        </h2>
+
+    </div>
+
+
+    <div class="timer-container">
+
+        <div class="time-box">
+
+            <strong id="days">
+                0
+            </strong>
+
+            <span>
+                Hari
+            </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <strong id="hours">
+                0
+            </strong>
+
+            <span>
+                Jam
+            </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <strong id="minutes">
+                0
+            </strong>
+
+            <span>
+                Menit
+            </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <strong id="seconds">
+                0
+            </strong>
+
+            <span>
+                Detik
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================================
+     LOVE CARD
+================================================= -->
+
+<section>
+
+    <div class="love-card">
+
+        <div class="big-heart">
+
+            ❤️
+
+        </div>
+
+
+        <p>
+
+            "Jarak hanya memisahkan
+            tempat kita berada,
+
+            bukan rasa yang kita punya."
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================================
+     LDR DISTANCE
+================================================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <span>
+            LONG DISTANCE
+        </span>
+
+        <h2>
+            Jauh Tapi Dekat
+        </h2>
+
+    </div>
+
+
+    <div class="distance">
+
+
+        <div class="person">
+
+            <div class="avatar">
+
+                🧑
+
+            </div>
+
+            <p>
+                Kamu
+            </p>
+
+        </div>
+
+
+        <div class="line"></div>
+
+
+        <div class="person">
+
+            <div class="avatar">
+
+                👩
+
+            </div>
+
+            <p>
+                Dia
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================================
+     SURAT
+================================================= -->
+
+<section id="letter">
+
+    <div class="section-title">
+
+        <span>
+            FOR YOU
+        </span>
+
+        <h2>
+            Ada Surat Untukmu
+        </h2>
+
+    </div>
+
+
+    <div class="letter-box">
+
+
+        <button
+            class="open-letter"
+            id="openLetter">
+
+            💌 Buka Surat
+
+        </button>
+
+
+        <div
+            class="letter"
+            id="letterBox">
+
+
+            <div class="letter-inner">
+
+                <p>
+
+                    Untuk seseorang yang
+                    selalu aku tunggu...
+
+                    <br><br>
+
+
+                    Mungkin hari ini kita
+                    tidak bisa bertemu.
+
+                    Tidak bisa duduk berdua.
+
+                    Tidak bisa saling
+                    menggenggam tangan.
+
+                    <br><br>
+
+
+                    Tapi setiap kali aku
+                    melihat langit,
+
+                    aku selalu berpikir
+                    bahwa kita sedang
+
+                    melihat bulan yang sama.
+
+                    <br><br>
+
+
+                    Terima kasih sudah
+                    bertahan sejauh ini.
+
+                    Terima kasih sudah
+                    tetap memilih aku,
+
+                    meskipun jarak terkadang
+                    membuat semuanya
+
+                    terasa sulit.
+
+                    <br><br>
+
+
+                    Aku tidak tahu
+                    berapa lama lagi kita
+                    harus menjalani hubungan
+                    seperti ini.
+
+                    <br><br>
+
+
+                    Tapi satu hal yang
+                    aku tahu...
+
+                    <br><br>
+
+
+                    <b>
+
+                        Aku masih ingin kamu
+                        menjadi orang yang aku
+                        temui di akhir perjalanan ini.
+
+                    </b>
+
+                    <br><br>
+
+
+                    ❤️ Aku sayang kamu.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================================
+     GALLERY
+================================================= -->
+
+<section id="gallery">
+
+    <div class="section-title">
+
+        <span>
+            OUR MEMORIES
+        </span>
+
+        <h2>
+            Kenangan Kita
+        </h2>
+
+    </div>
+
+
+    <div class="gallery">
+
+
+        <!--
+            GANTI BAGIAN INI DENGAN FOTO ASLI.
+
+            Contoh:
+
+            <div class="photo">
+                <img src="foto1.jpg">
+            </div>
+
+        -->
+
+
+        <div class="photo">
+
+            <div class="photo-placeholder">
+
+                📸 Foto Kenangan 1
+
+            </div>
+
+        </div>
+
+
+        <div class="photo">
+
+            <div class="photo-placeholder">
+
+                📸 Foto Kenangan 2
+
+            </div>
+
+        </div>
+
+
+        <div class="photo">
+
+            <div class="photo-placeholder">
+
+                📸 Foto Kenangan 3
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================================
+     MINI GAME
+================================================= -->
+
+<section id="game">
+
+
+    <div class="section-title">
+
+        <span>
+            LOVE GAME
+        </span>
+
+        <h2>
+            Main Sebentar Yuk ❤️
+        </h2>
+
+    </div>
+
+
+    <div class="game-card">
+
+
+        <!-- GAME INFO -->
+
+        <div class="game-info">
+
+
+            <div>
+
+                <small>
+                    SKOR
+                </small>
+
+                <strong id="gameScore">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <small>
+                    COMBO
+                </small>
+
+                <strong id="gameCombo">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <small>
+                    WAKTU
+                </small>
+
+                <strong id="gameTime">
+                    30
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- GAME AREA -->
+
+        <div
+            class="game-area"
+            id="gameArea">
+
+
+            <!-- START SCREEN -->
+
+            <div
+                class="game-start"
+                id="gameStart">
+
+
+                <div class="game-heart">
+
+                    💖
+
+                </div>
+
+
+                <h3>
+
+                    Tangkap Hati Kita
+
+                </h3>
+
+
+                <p>
+
+                    Tangkap hati sebanyak
+                    mungkin sebelum waktunya
+                    habis!
+
+                    <br>
+
+                    Semakin cepat kamu
+                    menangkapnya,
+
+                    semakin tinggi combo-mu.
+
+                </p>
+
+
+                <button
+                    type="button"
+                    id="startGame">
+
+                    💕 Mulai Game
+
+                </button>
+
+            </div>
+
+
+            <!-- RESULT -->
+
+            <div
+                class="game-result"
+                id="gameResult">
+
+
+                <div id="resultEmoji">
+
+                    💖
+
+                </div>
+
+
+                <h3 id="resultTitle">
+
+                    Kamu Hebat!
+
+                </h3>
+
+
+                <p id="resultText">
+
+                </p>
+
+
+                <button
+                    type="button"
+                    id="restartGame">
+
+                    🔄 Main Lagi
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================================
+     QUOTE
+================================================= -->
+
+<div class="quote">
+
+
+    <h2>
+
+        "Suatu hari nanti,
+
+        <br>
+
+        jarak ini akan menjadi cerita."
+
+    </h2>
+
+
+    <p>
+
+        Dan saat hari itu datang,
+        kita akan tersenyum
+
+        mengingat betapa kuatnya
+        kita bertahan.
+
+    </p>
+
+</div>
+
+
+
+<!-- =================================================
+     MUSIC
+================================================= -->
+
+<button
+    class="music"
+    id="musicButton"
+    type="button">
+
+    🎵
+
+</button>
+
+
+
+<audio id="music" loop>
+    <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+
+
+<!-- =================================================
+     FOOTER
+================================================= -->
+
+<footer>
+
+    <p>
+
+        Made with ❤️ especially for
+
+        <strong>
+            someone special
+        </strong>
+
+    </p>
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+   TANGGAL JADIAN
+===================================================== */
+
+/*
+   GANTI tanggal ini dengan
+   tanggal jadian kalian.
+
+   Format:
+
+   TAHUN-BULAN-TANGGAL
+
+   Contoh:
+   17 Agustus 2024
+
+   menjadi:
+
+   2024-08-17
+*/
+
+const relationshipStart =
+    new Date(
+        "2025-01-01T00:00:00"
+    );
+
+
+
+/* =====================================================
+   LIVE COUNTER
+===================================================== */
+
+function updateTimer() {
+
+    const now =
+        new Date();
+
+    const difference =
+        now.getTime()
+        -
+        relationshipStart.getTime();
+
+
+    if(difference < 0) {
+
+        return;
+
+    }
+
+
+    const seconds =
+        Math.floor(
+            difference / 1000
+        );
+
+
+    const days =
+        Math.floor(
+            seconds / 86400
+        );
+
+
+    const hours =
+        Math.floor(
+            (seconds % 86400)
+            / 3600
+        );
+
+
+    const minutes =
+        Math.floor(
+            (seconds % 3600)
+            / 60
+        );
+
+
+    const secs =
+        seconds % 60;
+
+
+    document.getElementById(
+        "days"
+    ).textContent =
+        days;
+
+
+    document.getElementById(
+        "hours"
+    ).textContent =
+        String(hours)
+        .padStart(2,"0");
+
+
+    document.getElementById(
+        "minutes"
+    ).textContent =
+        String(minutes)
+        .padStart(2,"0");
+
+
+    document.getElementById(
+        "seconds"
+    ).textContent =
+        String(secs)
+        .padStart(2,"0");
+
+}
+
+
+setInterval(
+    updateTimer,
+    1000
+);
+
+
+updateTimer();
+
+
+
+/* =====================================================
+   SURAT
+===================================================== */
+
+const openLetterButton =
+    document.getElementById(
+        "openLetter"
+    );
+
+
+const letter =
+    document.getElementById(
+        "letterBox"
+    );
+
+
+openLetterButton.addEventListener(
+    "click",
+    function() {
+
+
+        letter.classList.toggle(
+            "show"
+        );
+
+
+        if(
+            letter.classList.contains(
+                "show"
+            )
+        ) {
+
+            openLetterButton.innerHTML =
+                "💖 Tutup Surat";
+
+
+            createHearts(12);
+
+        }
+
+        else {
+
+            openLetterButton.innerHTML =
+                "💌 Buka Surat";
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   FLOATING HEART
+===================================================== */
+
+function createHeart() {
+
+    const heart =
+        document.createElement(
+            "div"
+        );
+
+
+    heart.className =
+        "heart";
+
+
+    const hearts = [
+
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💘",
+        "💓"
+
+    ];
+
+
+    heart.innerHTML =
+        hearts[
+            Math.floor(
+                Math.random()
+                *
+                hearts.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random() * 100
+        + "vw";
+
+
+    heart.style.fontSize =
+        (
+            14
+            +
+            Math.random() * 25
+        )
+        + "px";
+
+
+    heart.style.animationDuration =
+        (
+            5
+            +
+            Math.random() * 6
+        )
+        + "s";
+
+
+    heart.style.setProperty(
+        "--move",
+        (
+            Math.random() * 200
+            -
+            100
+        )
+        + "px"
+    );
+
+
+    document.body.appendChild(
+        heart
+    );
+
+
+    setTimeout(
+        function() {
+
+            heart.remove();
+
+        },
+        11000
+    );
+
+}
+
+
+setInterval(
+    createHeart,
+    1200
+);
+
+
+
+function createHearts(amount) {
+
+    for(
+        let i = 0;
+        i < amount;
+        i++
+    ) {
+
+        setTimeout(
+            function() {
+
+                createHeart();
+
+            },
+            i * 100
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   BINTANG
+===================================================== */
+
+for(
+    let i = 0;
+    i < 80;
+    i++
+) {
+
+    const star =
+        document.createElement(
+            "div"
+        );
+
+
+    star.className =
+        "particle";
+
+
+    star.style.left =
+        Math.random() * 100
+        + "vw";
+
+
+    star.style.top =
+        Math.random() * 100
+        + "vh";
+
+
+    star.style.animationDelay =
+        Math.random() * 3
+        + "s";
+
+
+    document.body.appendChild(
+        star
+    );
+
+}
+
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+const music =
+    document.getElementById(
+        "music"
+    );
+
+
+const musicButton =
+    document.getElementById(
+        "musicButton"
+    );
+
+
+musicButton.addEventListener(
+    "click",
+    function() {
+
+
+        if(
+            music.paused
+        ) {
+
+
+            music.play()
+                .then(
+                    function() {
+
+                        musicButton.innerHTML =
+                            "⏸️";
+
+                        musicButton.classList.add(
+                            "playing"
+                        );
+
+                    }
+                )
+                .catch(
+                    function() {
+
+                        alert(
+                            "Tambahkan file musik.mp3 terlebih dahulu."
+                        );
+
+                    }
+                );
+
+        }
+
+        else {
+
+            music.pause();
+
+            musicButton.innerHTML =
+                "🎵";
+
+            musicButton.classList.remove(
+                "playing"
+            );
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   CLICK HEART EFFECT
+===================================================== */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+
+        if(
+            event.target.tagName ===
+                "BUTTON"
+            ||
+            event.target.tagName ===
+                "A"
+        ) {
+
+            return;
+
+        }
+
+
+        for(
+            let i = 0;
+            i < 3;
+            i++
+        ) {
+
+
+            const heart =
+                document.createElement(
+                    "div"
+                );
+
+
+            heart.innerHTML =
+                "❤️";
+
+
+            heart.style.position =
+                "fixed";
+
+
+            heart.style.left =
+                event.clientX
+                + "px";
+
+
+            heart.style.top =
+                event.clientY
+                + "px";
+
+
+            heart.style.pointerEvents =
+                "none";
+
+
+            heart.style.zIndex =
+                "999";
+
+
+            heart.style.fontSize =
+                "18px";
+
+
+            heart.style.transition =
+                "1s ease";
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(
+                function() {
+
+
+                    heart.style.transform =
+                        `translate(
+                            ${(Math.random()*100)-50}px,
+                            -${50+Math.random()*100}px
+                        )
+                        scale(1.5)`;
+
+
+                    heart.style.opacity =
+                        "0";
+
+
+                },
+                20
+            );
+
+
+            setTimeout(
+                function() {
+
+                    heart.remove();
+
+                },
+                1100
+            );
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   MINI GAME
+===================================================== */
+
+const gameArea =
+    document.getElementById(
+        "gameArea"
+    );
+
+
+const startGameButton =
+    document.getElementById(
+        "startGame"
+    );
+
+
+const restartGameButton =
+    document.getElementById(
+        "restartGame"
+    );
+
+
+const gameStart =
+    document.getElementById(
+        "gameStart"
+    );
+
+
+const gameResult =
+    document.getElementById(
+        "gameResult"
+    );
+
+
+const gameScore =
+    document.getElementById(
+        "gameScore"
+    );
+
+
+const gameCombo =
+    document.getElementById(
+        "gameCombo"
+    );
+
+
+const gameTime =
+    document.getElementById(
+        "gameTime"
+    );
+
+
+const resultTitle =
+    document.getElementById(
+        "resultTitle"
+    );
+
+
+const resultText =
+    document.getElementById(
+        "resultText"
+    );
+
+
+const resultEmoji =
+    document.getElementById(
+        "resultEmoji"
+    );
+
+
+let score = 0;
+
+let combo = 0;
+
+let timeLeft = 30;
+
+let gameRunning = false;
+
+let gameTimer = null;
+
+let spawnTimer = null;
+
+
+
+/* =====================================================
+   START GAME
+===================================================== */
+
+function startLoveGame() {
+
+
+    score = 0;
+
+    combo = 0;
+
+    timeLeft = 30;
+
+    gameRunning = true;
+
+
+    gameScore.textContent =
+        score;
+
+
+    gameCombo.textContent =
+        combo;
+
+
+    gameTime.textContent =
+        timeLeft;
+
+
+    gameStart.style.display =
+        "none";
+
+
+    gameResult.classList.remove(
+        "show"
+    );
+
+
+    clearInterval(
+        gameTimer
+    );
+
+
+    clearTimeout(
+        spawnTimer
+    );
+
+
+    spawnHeartGame();
+
+
+    gameTimer =
+        setInterval(
+            function() {
+
+
+                timeLeft--;
+
+
+                gameTime.textContent =
+                    timeLeft;
+
+
+                if(
+                    timeLeft <= 0
+                ) {
+
+                    endLoveGame();
+
+                }
+
+            },
+            1000
+        );
+
+}
+
+
+
+/* =====================================================
+   SPAWN GAME HEART
+===================================================== */
+
+function spawnHeartGame() {
+
+
+    if(!gameRunning) {
+
+        return;
+
+    }
+
+
+    const oldHeart =
+        gameArea.querySelector(
+            ".target-heart"
+        );
+
+
+    if(oldHeart) {
+
+        oldHeart.remove();
+
+    }
+
+
+    const heart =
+        document.createElement(
+            "div"
+        );
+
+
+    heart.className =
+        "target-heart";
+
+
+    const heartTypes = [
+
+        "❤️",
+        "💖",
+        "💕",
+        "💗",
+        "💓"
+
+    ];
+
+
+    heart.textContent =
+        heartTypes[
+            Math.floor(
+                Math.random()
+                *
+                heartTypes.length
+            )
+        ];
+
+
+    const maxX =
+        Math.max(
+            10,
+            gameArea.clientWidth
+            - 70
+        );
+
+
+    const maxY =
+        Math.max(
+            10,
+            gameArea.clientHeight
+            - 70
+        );
+
+
+    heart.style.left =
+        Math.max(
+            10,
+            Math.random() * maxX
+        )
+        + "px";
+
+
+    heart.style.top =
+        Math.max(
+            10,
+            Math.random() * maxY
+        )
+        + "px";
+
+
+    heart.addEventListener(
+        "click",
+        catchHeart
+    );
+
+
+    gameArea.appendChild(
+        heart
+    );
+
+
+    spawnTimer =
+        setTimeout(
+            spawnHeartGame,
+            Math.max(
+                300,
+                900
+                -
+                combo * 30
+            )
+        );
+
+}
+
+
+
+/* =====================================================
+   CATCH HEART
+===================================================== */
+
+function catchHeart(event) {
+
+
+    if(!gameRunning) {
+
+        return;
+
+    }
+
+
+    event.stopPropagation();
+
+
+    score += 10;
+
+    combo++;
+
+
+    if(
+        combo >= 5
+    ) {
+
+        score += 5;
+
+    }
+
+
+    gameScore.textContent =
+        score;
+
+
+    gameCombo.textContent =
+        combo;
+
+
+    const effect =
+        document.createElement(
+            "div"
+        );
+
+
+    effect.className =
+        "catch-effect";
+
+
+    effect.textContent =
+        combo >= 5
+            ? "+15 💕"
+            : "+10 ❤️";
+
+
+    effect.style.left =
+        event.currentTarget.offsetLeft
+        + "px";
+
+
+    effect.style.top =
+        event.currentTarget.offsetTop
+        + "px";
+
+
+    gameArea.appendChild(
+        effect
+    );
+
+
+    setTimeout(
+        function() {
+
+            effect.remove();
+
+        },
+        700
+    );
+
+
+    event.currentTarget.remove();
+
+
+    spawnHeartGame();
+
+}
+
+
+
+/* =====================================================
+   END GAME
+===================================================== */
+
+function endLoveGame() {
+
+
+    gameRunning = false;
+
+
+    clearInterval(
+        gameTimer
+    );
+
+
+    clearTimeout(
+        spawnTimer
+    );
+
+
+    const heart =
+        gameArea.querySelector(
+            ".target-heart"
+        );
+
+
+    if(heart) {
+
+        heart.remove();
+
+    }
+
+
+    gameResult.classList.add(
+        "show"
+    );
+
+
+    if(
+        score >= 300
+    ) {
+
+
+        resultEmoji.textContent =
+            "💍";
+
+
+        resultTitle.textContent =
+            "Wah, calon pasangan sehidup semati!";
+
+
+        resultText.textContent =
+            `Skormu ${score}! Kamu menangkap begitu banyak hati. Semoga sebanyak itu juga rasa sayangmu untuk dia. ❤️`;
+
+    }
+
+    else if(
+        score >= 180
+    ) {
+
+
+        resultEmoji.textContent =
+            "💖";
+
+
+        resultTitle.textContent =
+            "Cintamu kuat banget!";
+
+
+        resultText.textContent =
+            `Skormu ${score}! Walaupun jauh, hati kamu tetap dekat dengannya. 💕`;
+
+    }
+
+    else if(
+        score >= 80
+    ) {
+
+
+        resultEmoji.textContent =
+            "💕";
+
+
+        resultTitle.textContent =
+            "Lumayan romantis!";
+
+
+        resultText.textContent =
+            `Skormu ${score}. Jangan cuma tangkap hati di game, tangkap juga hati pasanganmu setiap hari. 😘`;
+
+    }
+
+    else {
+
+
+        resultEmoji.textContent =
+            "🥺";
+
+
+        resultTitle.textContent =
+            "Hatinya masih banyak yang belum tertangkap...";
+
+
+        resultText.textContent =
+            `Skormu ${score}. Tidak apa-apa, yang penting satu hati yang kamu punya tetap kamu jaga. ❤️`;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   GAME BUTTON
+===================================================== */
+
+startGameButton.addEventListener(
+    "click",
+    startLoveGame
+);
+
+
+restartGameButton.addEventListener(
+    "click",
+    startLoveGame
+);
+
+</script>
+
+</body>
+</html>
+```
