@@ -1,0 +1,1192 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Kamu, Sayang ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    background: #160912;
+    color: white;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    /* GANTI BACKGROUND DI SINI */
+    background-image:
+        linear-gradient(
+            rgba(20, 5, 15, 0.55),
+            rgba(20, 5, 15, 0.75)
+        ),
+        url("background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 105, 180, 0.15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 0, 100, 0.12),
+            transparent 30%
+        );
+    z-index: -1;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.04);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0.8s;
+}
+
+.page.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+/* =========================
+   HEART PARTICLES
+========================= */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #ff8ebd;
+    font-size: 18px;
+    pointer-events: none;
+    animation: floatHeart linear forwards;
+    z-index: 5;
+    opacity: 0.8;
+}
+
+@keyframes floatHeart {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   ROOM 1
+========================= */
+
+.room1 {
+    flex-direction: column;
+    text-align: center;
+}
+
+.intro {
+    margin-bottom: 30px;
+}
+
+.intro h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 7vw, 80px);
+    font-weight: 600;
+    color: #ffd3e5;
+    text-shadow:
+        0 0 15px rgba(255, 105, 180, 0.6),
+        0 0 35px rgba(255, 105, 180, 0.3);
+}
+
+.intro p {
+    color: #f8c8da;
+    margin-top: 5px;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.photo-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    max-width: 1050px;
+    width: 100%;
+}
+
+.photo-card {
+    height: 300px;
+    border-radius: 22px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    box-shadow:
+        0 0 10px rgba(255, 105, 180, 0.4),
+        0 0 35px rgba(255, 105, 180, 0.2),
+        inset 0 0 25px rgba(255,255,255,0.08);
+
+    transition: 0.5s ease;
+    background: rgba(255,255,255,0.08);
+}
+
+.photo-card:hover {
+    transform: translateY(-12px) rotate(1deg);
+    box-shadow:
+        0 0 20px rgba(255, 105, 180, 0.7),
+        0 0 60px rgba(255, 105, 180, 0.4);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.next-btn {
+    margin-top: 30px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-btn {
+    padding: 13px 28px;
+    border-radius: 50px;
+
+    color: white;
+    background: rgba(255, 105, 180, 0.18);
+
+    border: 1px solid rgba(255, 182, 213, 0.5);
+
+    box-shadow:
+        0 0 15px rgba(255, 105, 180, 0.35);
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 105, 180, 0.35);
+
+    box-shadow:
+        0 0 25px rgba(255, 105, 180, 0.7);
+}
+
+/* =========================
+   ROOM 2 PASSWORD
+========================= */
+
+.room2 {
+    text-align: center;
+}
+
+.password-box {
+    width: min(430px, 95%);
+    padding: 45px 35px;
+
+    border-radius: 30px;
+
+    background: rgba(40, 10, 28, 0.55);
+    border: 1px solid rgba(255, 182, 213, 0.25);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 0 35px rgba(255, 105, 180, 0.25);
+}
+
+.lock {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.password-box h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    color: #ffd3e5;
+}
+
+.password-box p {
+    font-size: 13px;
+    color: #dcb4c6;
+    margin: 8px 0 25px;
+}
+
+.password-input {
+    width: 100%;
+    padding: 14px 18px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+
+    color: white;
+    outline: none;
+
+    text-align: center;
+    font-size: 16px;
+}
+
+.password-input:focus {
+    border-color: #ff8ebd;
+
+    box-shadow:
+        0 0 15px rgba(255,105,180,0.35);
+}
+
+.password-btn {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.error {
+    color: #ff8ba8;
+    font-size: 12px;
+    margin-top: 12px;
+
+    min-height: 18px;
+}
+
+/* =========================
+   ROOM 3
+========================= */
+
+.room3 {
+    flex-direction: column;
+}
+
+.room-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.room-title h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: #ffd5e6;
+}
+
+.room-title p {
+    color: #dcb4c6;
+    font-size: 13px;
+}
+
+.quote-grid {
+    width: min(1000px, 95%);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.quote-card {
+    min-height: 250px;
+
+    padding: 28px 20px;
+
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.13),
+        rgba(255, 105, 180, 0.08)
+    );
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.25),
+        0 0 25px rgba(255,105,180,0.15);
+
+    transition: 0.4s;
+}
+
+.quote-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 0 30px rgba(255,105,180,0.35);
+}
+
+.quote-card span {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.quote-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    color: #ffc9de;
+    margin-bottom: 10px;
+}
+
+.quote-card p {
+    color: #efd6df;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.room3-btn {
+    margin-top: 25px;
+}
+
+/* =========================
+   ROOM 4
+========================= */
+
+.room4 {
+    flex-direction: column;
+    text-align: center;
+}
+
+.final-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(45px, 7vw, 75px);
+    color: #ffd2e4;
+
+    text-shadow:
+        0 0 20px rgba(255,105,180,0.5);
+}
+
+.final-subtitle {
+    margin-top: 5px;
+    margin-bottom: 35px;
+    color: #e7c0cf;
+}
+
+.gifts {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gift {
+    width: 180px;
+    height: 180px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.13),
+            rgba(255,105,180,0.08)
+        );
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    backdrop-filter: blur(15px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.4s;
+
+    box-shadow:
+        0 0 25px rgba(255,105,180,0.15);
+
+    color: white;
+}
+
+.gift:hover {
+    transform: translateY(-10px) scale(1.03);
+
+    box-shadow:
+        0 0 40px rgba(255,105,180,0.4);
+}
+
+.gift-icon {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.gift span:last-child {
+    color: #ffd1e2;
+    font-size: 13px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(8, 2, 7, 0.8);
+
+    backdrop-filter: blur(12px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.4s;
+
+    z-index: 50;
+
+    padding: 20px;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    width: min(500px, 95%);
+
+    padding: 25px;
+
+    border-radius: 30px;
+
+    background: rgba(45, 12, 31, 0.9);
+
+    border: 1px solid rgba(255, 182, 213, 0.3);
+
+    box-shadow:
+        0 0 50px rgba(255,105,180,0.3);
+
+    text-align: center;
+
+    transform: scale(0.8);
+
+    transition: 0.5s;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+.modal-content img {
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 22px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 0 30px rgba(255,105,180,0.3);
+}
+
+.modal-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    color: #ffd3e5;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    color: #ecd2dd;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.close-btn {
+    margin-top: 20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 800px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .page {
+        position: absolute;
+        min-height: 100vh;
+        height: auto;
+        padding: 35px 18px;
+    }
+
+    .photo-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo-card {
+        height: 220px;
+    }
+
+    .quote-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quote-card {
+        min-height: 220px;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .photo-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .photo-card {
+        height: 190px;
+    }
+
+    .quote-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quote-card {
+        min-height: 180px;
+    }
+
+    .gifts {
+        gap: 12px;
+    }
+
+    .gift {
+        width: 145px;
+        height: 145px;
+    }
+
+    .gift-icon {
+        font-size: 42px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     RUANG 1
+===================================================== -->
+
+<section class="page room1 active" id="page1">
+
+    <div class="intro">
+        <h1>Untuk Kamu ❤️</h1>
+        <p>Seseorang yang selalu ada di hati, meski jauh di mata.</p>
+        <audio autoplay loop>
+            <source src="musik2.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="photo-row">
+
+        <!-- FOTO 1 -->
+        <div class="photo-card">
+            <img src="foto1.crdownload" alt="Foto kita">
+        </div>
+
+        <!-- FOTO 2 -->
+        <div class="photo-card">
+            <img src="foto2.crdownload" alt="Foto kita">
+        </div>
+
+        <!-- FOTO 3 -->
+        <div class="photo-card">
+            <img src="foto3.crdownload" alt="Foto kita">
+        </div>
+
+        <!-- FOTO 4 -->
+        <div class="photo-card">
+            <img src="foto4.crdownload" alt="Foto kita">
+        </div>
+
+    </div>
+
+    <button class="main-btn next-btn" onclick="goToPage(2)">
+        Lanjut untukmu → ❤️
+    </button>
+
+</section>
+
+
+<!-- =====================================================
+     RUANG 2 — PASSWORD
+===================================================== -->
+
+<section class="page room2" id="page2">
+
+    <div class="password-box">
+
+        <div class="lock">🔐</div>
+
+        <h2>Ruang Rahasia</h2>
+
+        <p>
+            Hanya seseorang yang spesial yang bisa masuk ke sini.
+        </p>
+
+        <input
+            type="password"
+            id="password"
+            class="password-input"
+            placeholder="Masukkan password..."
+            autocomplete="off"
+        >
+
+        <button
+            class="main-btn password-btn"
+            onclick="checkPassword()"
+        >
+            Buka Ruang ❤️
+        </button>
+
+        <div class="error" id="error"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RUANG 3 — KATA KATA
+===================================================== -->
+
+<section class="page room3" id="page3">
+
+    <div class="room-title">
+
+        <h2>Beberapa Hal Tentang Kita</h2>
+
+        <p>
+            Karena jarak tidak pernah cukup kuat untuk memisahkan hati.
+        </p>
+
+    </div>
+
+    <div class="quote-grid">
+
+        <div class="quote-card">
+            <span>💗</span>
+
+            <h3>Tentang Kamu</h3>
+
+            <p>
+                Kamu adalah alasan kenapa senyum kecil
+                bisa muncul bahkan di hari yang paling berat.
+            </p>
+        </div>
+
+
+        <div class="quote-card">
+            <span>🌙</span>
+
+            <h3>Tentang Jarak</h3>
+
+            <p>
+                Jarak hanya membuat kita tidak bisa saling
+                memeluk setiap hari, bukan membuat hati kita jauh.
+            </p>
+        </div>
+
+
+        <div class="quote-card">
+            <span>✨</span>
+
+            <h3>Tentang Rindu</h3>
+
+            <p>
+                Rindu adalah bukti bahwa ada seseorang
+                yang begitu berarti meskipun tidak selalu berada di samping kita.
+            </p>
+        </div>
+
+
+        <div class="quote-card">
+            <span>💍</span>
+
+            <h3>Tentang Kita</h3>
+
+            <p>
+                Semoga suatu hari nanti semua jarak ini
+                berubah menjadi cerita yang kita kenang bersama.
+            </p>
+        </div>
+
+    </div>
+
+    <button
+        class="main-btn room3-btn"
+        onclick="goToPage(4)"
+    >
+        Ada sesuatu untukmu → 🎁
+    </button>
+
+</section>
+
+
+<!-- =====================================================
+     RUANG 4 — HADIAH
+===================================================== -->
+
+<section class="page room4" id="page4">
+
+    <h1 class="final-title">
+        Untukmu, Sayang ❤️
+    </h1>
+
+    <p class="final-subtitle">
+        Ada beberapa hadiah kecil yang ingin aku berikan.
+    </p>
+
+    <div class="gifts">
+
+        <!-- HADIAH 1 -->
+
+        <button
+            class="gift"
+            onclick="openGift(1)"
+        >
+            <span class="gift-icon">💌</span>
+            <span>Pesan untukmu</span>
+        </button>
+
+
+        <!-- HADIAH 2 -->
+
+        <button
+            class="gift"
+            onclick="openGift(2)"
+        >
+            <span class="gift-icon">🌹</span>
+            <span>Untuk sayang</span>
+        </button>
+
+
+        <!-- HADIAH 3 -->
+
+        <button
+            class="gift"
+            onclick="openGift(3)"
+        >
+            <span class="gift-icon">🎁</span>
+            <span>Hadiah kecil</span>
+        </button>
+
+
+        <!-- HADIAH 4 -->
+
+        <button
+            class="gift"
+            onclick="openGift(4)"
+        >
+            <span class="gift-icon">💍</span>
+            <span>Untuk masa depan</span>
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MODAL HADIAH
+===================================================== -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-content">
+
+        <img
+            id="modalImage"
+            src="foto1.crdownload"
+            alt="Hadiah"
+        >
+
+        <h2 id="modalTitle"></h2>
+
+        <p id="modalText"></p>
+
+        <button
+            class="main-btn close-btn"
+            onclick="closeGift()"
+        >
+            Tutup ❤️
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+/*
+   GANTI PASSWORD DI SINI
+
+   Contoh:
+   const correctPassword = "sayang123";
+*/
+
+const correctPassword = "ILOVE";
+
+
+function checkPassword() {
+
+    const input = document.getElementById("password");
+    const error = document.getElementById("error");
+
+    if (input.value === correctPassword) {
+
+        error.textContent = "";
+
+        createHearts(15);
+
+        setTimeout(() => {
+            goToPage(3);
+        }, 400);
+
+    } else {
+
+        error.textContent =
+            "Passwordnya belum tepat... coba ingat lagi ❤️";
+
+        input.value = "";
+
+        input.animate(
+            [
+                { transform: "translateX(0)" },
+                { transform: "translateX(-8px)" },
+                { transform: "translateX(8px)" },
+                { transform: "translateX(0)" }
+            ],
+            {
+                duration: 300
+            }
+        );
+    }
+}
+
+
+/* =====================================================
+   ENTER PASSWORD
+===================================================== */
+
+document
+    .getElementById("password")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+            checkPassword();
+        }
+
+    });
+
+
+/* =====================================================
+   PAGE NAVIGATION
+===================================================== */
+
+function goToPage(number) {
+
+    document
+        .querySelectorAll(".page")
+        .forEach(page => {
+
+            page.classList.remove("active");
+
+        });
+
+    const target =
+        document.getElementById("page" + number);
+
+    target.classList.add("active");
+
+    createHearts(8);
+}
+
+
+/* =====================================================
+   GIFT DATA
+===================================================== */
+
+/*
+   GANTI:
+   gift1.jpg
+   gift2.jpg
+   gift3.jpg
+   gift4.jpg
+
+   dengan foto milikmu.
+*/
+
+const gifts = {
+
+    1: {
+
+        image: "gift1.jpg",
+
+        title: "Pesan Untukmu 💌",
+
+        text:
+        "Kalau suatu hari kamu merasa sendirian, ingatlah bahwa ada seseorang yang selalu mendoakanmu dari kejauhan. Aku mungkin tidak selalu berada di sampingmu, tapi hatiku selalu punya tempat untukmu."
+
+    },
+
+    2: {
+
+        image: "gift2.jpg",
+
+        title: "Untuk Kamu 🌹",
+
+        text:
+        "Aku tidak menjanjikan hubungan yang selalu sempurna. Tapi aku ingin terus belajar menjadi seseorang yang bisa membuatmu merasa dicintai, dihargai, dan tidak sendirian."
+
+    },
+
+    3: {
+
+        image: "gift3.jpg",
+
+        title: "Hadiah Kecil 🎁",
+
+        text:
+        "Hadiah ini mungkin sederhana, tapi aku membuatnya dengan satu harapan: semoga setiap kali kamu melihatnya, kamu ingat bahwa ada seseorang yang sangat menyayangimu."
+
+    },
+
+    4: {
+
+        image: "gift4.jpg",
+
+        title: "Untuk Masa Depan 💍",
+
+        text:
+        "Semoga suatu hari nanti kita tidak lagi menghitung berapa kilometer jarak yang memisahkan kita. Semoga nanti kita hanya menghitung hari-hari yang kita habiskan bersama."
+
+    }
+
+};
+
+
+/* =====================================================
+   OPEN GIFT
+===================================================== */
+
+function openGift(number) {
+
+    const gift = gifts[number];
+
+    document.getElementById("modalImage").src =
+        gift.image;
+
+    document.getElementById("modalTitle").textContent =
+        gift.title;
+
+    document.getElementById("modalText").textContent =
+        gift.text;
+
+    document
+        .getElementById("modal")
+        .classList.add("show");
+
+    createHearts(15);
+}
+
+
+/* =====================================================
+   CLOSE GIFT
+===================================================== */
+
+function closeGift() {
+
+    document
+        .getElementById("modal")
+        .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   CLOSE MODAL WHEN CLICK OUTSIDE
+===================================================== */
+
+document
+    .getElementById("modal")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+            closeGift();
+        }
+
+    });
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+function createHeart() {
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = [
+        "❤️",
+        "💗",
+        "💕",
+        "💖",
+        "💘",
+        "💞"
+    ];
+
+    heart.textContent =
+        hearts[
+            Math.floor(
+                Math.random() * hearts.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (12 + Math.random() * 20) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+
+        heart.remove();
+
+    }, 10000);
+}
+
+
+function createHearts(amount) {
+
+    for (let i = 0; i < amount; i++) {
+
+        setTimeout(
+            createHeart,
+            i * 150
+        );
+
+    }
+}
+
+
+/* =====================================================
+   AUTOMATIC HEARTS
+===================================================== */
+
+setInterval(() => {
+
+    createHeart();
+
+}, 1000);
+
+
+/* =====================================================
+   ESC CLOSE MODAL
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+            closeGift();
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
+
